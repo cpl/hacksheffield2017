@@ -200,3 +200,17 @@
   "Shell": 47
 }
 ```
+
+* After we compute user score
+    * We check for users nearby using:
+        * GET `https://api.github.com/search/users`
+        * `https://api.github.com/search/users?q=location:Manchester repos:10..20 type:user followers:>=10 language:Python language:Java`
+        * The search query contains:
+            * location:<GET LOCATION FROM OUR USER>
+            * repos:<USE RANGE SIMILAR TO USER's>
+            * type:<user|org>, based on user pref
+            * followers:n..m
+            * language:X
+            * language:Y
+            * language:Z
+                * we add each of our user's languages (or top languages [top 3-5?] based on line count ?)
