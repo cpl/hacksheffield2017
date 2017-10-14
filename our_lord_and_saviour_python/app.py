@@ -15,7 +15,7 @@ def handle_data():
         username = request.form['username']
         password = request.form['password']
         ghuser = GithubUser(username, password)
-        return render_template('user.html', username=username, userrepos=ghuser.languages)
+        return render_template('user.html', username=username, userrepos=len(ghuser.matches))
     elif request.method == 'GET':
         return render_template('login.html')
     else:
