@@ -27,10 +27,10 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1507990414691" expanded="true" signature="2226:2240" ph="..." />
-                <marker date="1507990414691" expanded="true" signature="2260:2464" ph="..." />
-                <marker date="1507990414691" expanded="true" signature="2557:2668" ph="..." />
-                <marker date="1507990414691" expanded="true" signature="2817:3297" ph="..." />
+                <marker date="1507990669310" expanded="true" signature="2226:2240" ph="..." />
+                <marker date="1507990669310" expanded="true" signature="2260:2464" ph="..." />
+                <marker date="1507990669310" expanded="true" signature="2557:2668" ph="..." />
+                <marker date="1507990669310" expanded="true" signature="2817:3297" ph="..." />
               </folding>
             </state>
           </provider>
@@ -49,8 +49,8 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+            <state relative-caret-position="54">
+              <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -119,6 +119,7 @@
         <option value="$PROJECT_DIR$/app/view1/view1.html" />
         <option value="$PROJECT_DIR$/app/views/organisationSearch/view1.html" />
         <option value="$PROJECT_DIR$/node_modules/angular/package.json" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -247,16 +248,15 @@
       <updated>1507981791146</updated>
       <workItem from="1507981793390" duration="5952000" />
       <workItem from="1507987778660" duration="28000" />
-      <workItem from="1507987837669" duration="2668000" />
+      <workItem from="1507987837669" duration="2862000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8648000" />
+    <option name="totallyTimeSpent" value="8842000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -296,10 +296,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1507990414691" expanded="true" signature="2226:2240" ph="..." />
-            <marker date="1507990414691" expanded="true" signature="2260:2464" ph="..." />
-            <marker date="1507990414691" expanded="true" signature="2557:2668" ph="..." />
-            <marker date="1507990414691" expanded="true" signature="2817:3297" ph="..." />
+            <marker date="1507990669310" expanded="true" signature="2226:2240" ph="..." />
+            <marker date="1507990669310" expanded="true" signature="2260:2464" ph="..." />
+            <marker date="1507990669310" expanded="true" signature="2557:2668" ph="..." />
+            <marker date="1507990669310" expanded="true" signature="2817:3297" ph="..." />
           </folding>
         </state>
       </provider>
@@ -352,10 +352,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1507990414691" expanded="true" signature="2226:2240" ph="..." />
-            <marker date="1507990414691" expanded="true" signature="2260:2464" ph="..." />
-            <marker date="1507990414691" expanded="true" signature="2557:2668" ph="..." />
-            <marker date="1507990414691" expanded="true" signature="2817:3297" ph="..." />
+            <marker date="1507990669310" expanded="true" signature="2226:2240" ph="..." />
+            <marker date="1507990669310" expanded="true" signature="2260:2464" ph="..." />
+            <marker date="1507990669310" expanded="true" signature="2557:2668" ph="..." />
+            <marker date="1507990669310" expanded="true" signature="2817:3297" ph="..." />
           </folding>
         </state>
       </provider>
@@ -461,10 +461,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1507990414691" expanded="true" signature="2226:2240" ph="..." />
-            <marker date="1507990414691" expanded="true" signature="2260:2464" ph="..." />
-            <marker date="1507990414691" expanded="true" signature="2557:2668" ph="..." />
-            <marker date="1507990414691" expanded="true" signature="2817:3297" ph="..." />
+            <marker date="1507990669310" expanded="true" signature="2226:2240" ph="..." />
+            <marker date="1507990669310" expanded="true" signature="2260:2464" ph="..." />
+            <marker date="1507990669310" expanded="true" signature="2557:2668" ph="..." />
+            <marker date="1507990669310" expanded="true" signature="2817:3297" ph="..." />
           </folding>
         </state>
       </provider>
@@ -512,8 +512,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+        <state relative-caret-position="54">
+          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
           <folding />
         </state>
       </provider>
