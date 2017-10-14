@@ -29,7 +29,7 @@ class GithubUser(object):
             if repo['owner']['login'] == self.username:
                 self.owned_repos.append(repo)
                 languages = self.apiman.get('repos/%s/%s/languages' % (self.username, repo['name'])).json()
-                print languages
+
                 for key, value in languages.items():
                     if self.languages.get(key, None) is None:
                         self.languages[key] = value
