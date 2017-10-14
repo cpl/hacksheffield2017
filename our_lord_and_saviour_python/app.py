@@ -14,12 +14,19 @@ def handle_data():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+        ghuser = None
+        try:
+            ghuser = GithubUser(username, password)
+        except Exception:
+            return render_template('login.html', err='FUCKING TRY AGAIN TWAT!')
         if MATCHED_PROFILES.get(username,None) is None:
             MATCHED_PROFILES[username] = ([],[])
-        ghuser = GithubUser(username, password)
+        else:
+            ghuser.active_matches = MATCHED_PROFILES[username][1]
+
         return render_template('user.html', username=username, userrepos=len(ghuser.matches))
     elif request.method == 'GET':
-        return render_template('login.html')
+        return render_template('login.html', err='')
     else:
         return 'BA MUI, GET sau POST'
 
@@ -27,6 +34,21 @@ def handle_data():
 @app.route('/user')
 def user():
     return render_template('user.html')
+
+
+@app.route('/explore', methods=['GET', 'POST'])
+def dislike_love():
+    if request.method == 'POST':
+        if request.form['submit'] == 'dislike':
+            return 'miel'
+        elif request.form['submit'] == 'love':
+            return 'love'
+        else:
+            return 'unvalid'
+    elif request.method == 'GET':
+        return render_template("explore.html")
+    else:
+        return 'BA MUI, GET sau POST'
 
 
 if __name__ == '__main__':

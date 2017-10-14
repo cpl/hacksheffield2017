@@ -11,7 +11,11 @@ class GithubUser(object):
     def __init__(self, username, password):
         self.apiman = APIManager(username, password)
 
-        user = self.apiman.get('user').json()
+        user = self.apiman.get('user')
+        if user.status_code == 401:
+            raise Exception()
+        else:
+            user = user.json()
         self.username = username
         self.avatar = user['avatar_url']
         self.location = user['location'].replace(' ', '') if user['location'] is not None else 'UK'
