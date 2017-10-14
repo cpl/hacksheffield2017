@@ -1,5 +1,4 @@
 import requests
-from pprint import pprint
 
 
 API = 'https://api.github.com/%s'
@@ -35,13 +34,15 @@ class GithubUser(object):
                 else:
                     self.languages[key] += value
 
+        self.lang_name = self.languages.keys()
+
         request = 'search/users?q=location:%s repos:%d..%d type:%s followers:%d..%d '
         for lang in languages.keys():
             request += 'language:%s ' % lang.replace(' ', '')
         request += '&per_page=100'
 
-        print request
-        print request % (self.location, 0, self.repo_count+1000, 'user', 0, self.followers_count+2000)
+        # print request
+        # print request % (self.location, 0, self.repo_count+1000, 'user', 0, self.followers_count+2000)
         self.matches = self.apiman.get(request % (self.location, 0, self.repo_count+1000, 'user', 0, self.followers_count+2000)).json()['items']
 
 

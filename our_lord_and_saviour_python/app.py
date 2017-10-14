@@ -28,7 +28,7 @@ def handle_data():
         else:
             ghuser.active_matches = MATCHED_PROFILES[username][1]
 
-        return render_template('user.html', username=username, userrepos=len(ghuser.matches))
+        return render_template('user.html', username=ghuser.username, location=ghuser.location, bio=ghuser.bio, repcount=ghuser.repo_count, l1=ghuser.lang_name[0], l2=ghuser.lang_name[1], l3=ghuser.lang_name[2])
     elif request.method == 'GET':
         return render_template('login.html', err='')
     else:
@@ -37,12 +37,17 @@ def handle_data():
 
 @app.route('/user')
 def user():
-    return render_template('user.html')
+    global ghuser
+    if ghuser is None:
+        return render_template('login.html', err='PLEASE LOG IN')
+    return render_template('user.html', username=ghuser.username, location=ghuser.location, bio=ghuser.bio, repcount=ghuser.repo_count, l1=ghuser.lang_name[0], l2=ghuser.lang_name[1], l3=ghuser.lang_name[2])
 
 
 @app.route('/explore', methods=['GET', 'POST'])
 def dislike_love():
     global ghuser
+    if ghuser is None:
+        return render_template('login.html', err='PLEASE LOG IN')
     return ghuser.username
     if request.method == 'POST':
         if request.form['submit'] == 'dislike':
