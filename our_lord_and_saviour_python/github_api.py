@@ -19,14 +19,14 @@ class APIManager(object):
     def rate(self):
         return self.get('rate_limit')
 
-    def help(self):
-        return self.get('', HEADER)
-
     def user_list(self, id):
         return self.get('users?since=%d' % id)
 
     def user_list_repos(self, user):
-        return requests.get('users/%s/repos' % user)
+        return self.get('users/%s/repos' % user)
+
+    def self_list_repos(self):
+        return self.get('user/repos')
 
     def repo_search(self, query):
         return self.get('search/repositories?q=%s' % query)
@@ -36,9 +36,4 @@ class APIManager(object):
 
 
 if __name__ == '__main__':
-
-    apiman = APIManager(
-        'thee-engineer',
-        'b5d386e6d72e0e78bfebb318886e272afd1688d5')
-
-    pprint(apiman.rate().json())
+    pass

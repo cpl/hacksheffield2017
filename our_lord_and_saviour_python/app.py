@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from github_api import APIManager
 
-app = Flask(__name__)
+app = Flask('git connect')
 
 
 @app.route('/')
@@ -9,16 +9,26 @@ def hello():
     return render_template('index.html')
 
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def handle_data():
-    username = request.form['username']
-    password = request.form['password']
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        apiman = APIManager(username, password)
+        repos = ''
+        for repo in apiman.self_list_repos().json():
+            repos += repo['full_name'] + '    '
 
-    apiman = APIManager(username, password)
+        return render_template('user.html', username=username, userrepos=repos)
+    elif request.method == 'GET':
+        return render_template('login.html')
+    else:
+        return 'BA MUI, GET sau POST'
 
-    return render_template(
-        'index.html',
-        test=apiman.rate().json())
+
+@app.route('/user')
+def user():
+    return render_template('user.html')
 
 
 if __name__ == '__main__':
