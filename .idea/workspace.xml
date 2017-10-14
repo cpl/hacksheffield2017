@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a33b7deb-eec0-43bc-8607-e2be0467753c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/organisationSearch/view1.html" afterPath="$PROJECT_DIR$/app/views/organisationSearch/view1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/view14/fuckjs.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view14/view14.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/angular/package.json" afterPath="$PROJECT_DIR$/node_modules/angular/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
+    <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +27,10 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1507987631708" expanded="true" signature="2728:3208" ph="..." />
+                <marker date="1507990414691" expanded="true" signature="2226:2240" ph="..." />
+                <marker date="1507990414691" expanded="true" signature="2260:2464" ph="..." />
+                <marker date="1507990414691" expanded="true" signature="2557:2668" ph="..." />
+                <marker date="1507990414691" expanded="true" signature="2817:3297" ph="..." />
               </folding>
             </state>
           </provider>
@@ -40,21 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="18">
               <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/node_modules/angular/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -251,12 +247,12 @@
       <updated>1507981791146</updated>
       <workItem from="1507981793390" duration="5952000" />
       <workItem from="1507987778660" duration="28000" />
-      <workItem from="1507987837669" duration="2484000" />
+      <workItem from="1507987837669" duration="2668000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8464000" />
+    <option name="totallyTimeSpent" value="8648000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -300,7 +296,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1507987631708" expanded="true" signature="2728:3208" ph="..." />
+            <marker date="1507990414691" expanded="true" signature="2226:2240" ph="..." />
+            <marker date="1507990414691" expanded="true" signature="2260:2464" ph="..." />
+            <marker date="1507990414691" expanded="true" signature="2557:2668" ph="..." />
+            <marker date="1507990414691" expanded="true" signature="2817:3297" ph="..." />
           </folding>
         </state>
       </provider>
@@ -353,7 +352,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1507987631708" expanded="true" signature="2728:3208" ph="..." />
+            <marker date="1507990414691" expanded="true" signature="2226:2240" ph="..." />
+            <marker date="1507990414691" expanded="true" signature="2260:2464" ph="..." />
+            <marker date="1507990414691" expanded="true" signature="2557:2668" ph="..." />
+            <marker date="1507990414691" expanded="true" signature="2817:3297" ph="..." />
           </folding>
         </state>
       </provider>
@@ -459,7 +461,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1507987631708" expanded="true" signature="2728:3208" ph="..." />
+            <marker date="1507990414691" expanded="true" signature="2226:2240" ph="..." />
+            <marker date="1507990414691" expanded="true" signature="2260:2464" ph="..." />
+            <marker date="1507990414691" expanded="true" signature="2557:2668" ph="..." />
+            <marker date="1507990414691" expanded="true" signature="2817:3297" ph="..." />
           </folding>
         </state>
       </provider>
@@ -497,18 +502,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/node_modules/angular/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+        <state relative-caret-position="162">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="69" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/angular/package.json">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
-          <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+          <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
           <folding />
         </state>
       </provider>
