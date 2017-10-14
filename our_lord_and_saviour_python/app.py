@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
-from base64 import b64encode
+from github_api import APIManager
+
 app = Flask(__name__)
 
 
@@ -12,7 +13,12 @@ def hello():
 def handle_data():
     username = request.form['username']
     password = request.form['password']
-    return render_template('index.html', test=b64encode(username + ':' + password))
+
+    apiman = APIManager(username, password)
+
+    return render_template(
+        'index.html',
+        test=apiman.rate().json())
 
 
 if __name__ == '__main__':
