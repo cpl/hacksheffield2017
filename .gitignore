@@ -106,3 +106,5 @@ ENV/
 
 node_modules/
 **/*.idea
+.idea
+*.idea
