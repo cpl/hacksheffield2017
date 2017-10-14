@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html>
+<meta charset="UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <body>
 
-<div ng-app="myApp" ng-controller="myCtrl">
-
-    <p>Today's welcome message is:</p>
-
-    <h1>{{HTTPanswer}}</h1>
-
+<div ng-app="myApp" ng-controller="myCtrl" ng-model = "person">
+    <form action = "" method="'post" id="'formid" name="loginForm">
+        <h1>Login Form </h1>
+        username:
+        <input type="text" ng-model="formData.username" size="12" />
+        <br/> password:
+        <input type="password" ng-model="formData.password" size="12" />
+        <h1>{{HTTPanswer}}</h1>
+        <p>
+            <input type="submit" ng-click="serialize($event)" />
+        </p>
+    </form>
 </div>
+
 
 <script>
     var app = angular.module('myApp', []);
     app.controller('myCtrl', function($scope, $http) {
+        $scope.formData = {}
+        $scope.serialize = function($event){
+            var detailsJson = $scope.formData;
+            var loginCredentials = base64(detailsJson.username);
+            //console.log(loginCredentials)
+            console.log(detailsJson)
+            alert(JSON.stringify(detailsJson))
+            $event.preventDefault()
+        }
         $http({
             method: 'GET',
-            url: 'https://api.github.com/users',
+            url: 'https://api.github.com/',
             headers: {
                 'Accept': 'application/vnd.github.v3+json'
             }
         })
             .then(function(response) {
                 //var parsedData = JSON.parse(response);
-                $scope.HTTPanswer = response.data;
+                //$scope.HTTPanswer = response.data;
             });
     });
 </script>
