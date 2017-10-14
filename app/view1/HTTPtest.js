@@ -1,1 +1,0 @@
-$http.get('/someUrl', config).then(successCallback, errorCallback);

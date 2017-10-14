@@ -7,22 +7,23 @@
 
     <p>Today's welcome message is:</p>
 
-    <h1>{{myWelcome}}</h1>
+    <h1>{{HTTPanswer}}</h1>
 
 </div>
-
-<p>The $http service requests a page on the server, and the response is set as the value of the "myWelcome" variable.</p>
 
 <script>
     var app = angular.module('myApp', []);
     app.controller('myCtrl', function($scope, $http) {
         $http({
             method: 'GET',
-            url: '/someUrl'
-            headers: 'application/vnd.github.v3+json'
+            url: 'https://api.github.com/users',
+            headers: {
+                'Accept': 'application/vnd.github.v3+json'
+            }
         })
             .then(function(response) {
-                $scope.myWelcome = response.data;
+                //var parsedData = JSON.parse(response);
+                $scope.HTTPanswer = response.data;
             });
     });
 </script>
