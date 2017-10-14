@@ -3,7 +3,7 @@ from github_api import GithubUser
 
 app = Flask('git connect')
 
-
+MATCHED_PROFILES = {}
 @app.route('/')
 def hello():
     return render_template('index.html')
@@ -14,6 +14,8 @@ def handle_data():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+        if MATCHED_PROFILES.get(username,None) is None:
+            MATCHED_PROFILES[username] = ([],[])
         ghuser = GithubUser(username, password)
         return render_template('user.html', username=username, userrepos=len(ghuser.matches))
     elif request.method == 'GET':
