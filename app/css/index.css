@@ -30,10 +30,18 @@ div.modal-body, .modal-header, .modal-footer{
 div.modal-body, .modal-header, .modal-footer{
 
 }
-.modal{
-    color:white;
+.modal {
+    color: white;
+    margin-top: 10%;
+    margin:none;
 }
-
+#iconGit {
+    background-image: url("../gitIcon.png");
+    margin-top:10%;
+}
+.h8{
+    font-weight: 300;
+}
 #content{
     min-height: 100px;
     padding-top: 20%;
