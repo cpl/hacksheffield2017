@@ -21,14 +21,24 @@ class GithubUser(object):
         self.followers_count = user['followers']
         self.following_count = user['following']
 
+        self.languages = {}
         self.owned_repos = []
         self.external_repos = []
         repos = self.apiman.get('user/repos').json()
         for repo in repos:
             if repo['owner']['login'] == self.username:
                 self.owned_repos.append(repo)
-            else:
-                self.external_repos.append(repo)
+                languages = self.apiman.get('repos/%s/%s/languages' % (self.username, repo['name'])).json()
+                print languages
+                for key, value in languages.items():
+                    if self.languages.get(key, None) is None:
+                        self.languages[key] = value
+                    else:
+                        self.languages[key] += value
+                else:
+                    self.external_repos.append(repo)
+
+        print self.languages
 
 
 class APIManager(object):

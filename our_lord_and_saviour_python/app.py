@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from github_api import APIManager
+from github_api import GithubUser
 
 app = Flask('git connect')
 
@@ -14,12 +14,8 @@ def handle_data():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        apiman = APIManager(username, password)
-        repos = ''
-        for repo in apiman.self_list_repos().json():
-            repos += repo['full_name'] + '    '
-
-        return render_template('user.html', username=username, userrepos=repos)
+        ghuser = GithubUser(username, password)
+        return render_template('user.html', username=username, userrepos=ghuser.languages)
     elif request.method == 'GET':
         return render_template('login.html')
     else:
