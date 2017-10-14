@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from github_api import GithubUser
+from pprint import pprint
 
 app = Flask('git connect')
 
@@ -49,7 +50,7 @@ def dislike_love():
     if ghuser is None:
         return render_template('login.html', err='PLEASE LOG IN')
 
-    print MATCHED_PROFILES
+    pprint(MATCHED_PROFILES)
 
     if request.method == 'POST':
         if request.form['submit'] == 'dislike':
@@ -59,15 +60,16 @@ def dislike_love():
             muser = ghuser.matches[ghuser.mindex-1]['login']
             if MATCHED_PROFILES.get(muser, None) is None:
                 MATCHED_PROFILES[muser] = ([ghuser.username], [])
-            elif muser in MATCHED_PROFILES[ghuser.username]:
+            elif muser in MATCHED_PROFILES[ghuser.username][0]:
+                print '******* ******* SHITFUCK ******* *******'
                 MATCHED_PROFILES[muser][1].append(ghuser.username)
                 MATCHED_PROFILES[ghuser.username][1].append(muser)
         else:
             return 'unvalid'
 
-        return render_template("explore.html", username=ghuser.get_match())
+        return render_template("explore.html", match_count=len(MATCHED_PROFILES[ghuser.username][1]), username=ghuser.get_match())
     elif request.method == 'GET':
-        return render_template("explore.html", username=ghuser.get_match())
+        return render_template("explore.html", match_count=len(MATCHED_PROFILES[ghuser.username][1]), username=ghuser.get_match())
     else:
         return 'BA MUI, GET sau POST'
 

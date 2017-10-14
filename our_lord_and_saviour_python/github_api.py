@@ -42,14 +42,17 @@ class GithubUser(object):
             request += 'language:%s ' % lang.replace(' ', '')
         request += '&per_page=100'
 
-        # print request
-        # print request % (self.location, 0, self.repo_count+1000, 'user', 0, self.followers_count+2000)
         self.matches = self.apiman.get(request % (self.location, 0, self.repo_count+1000, 'user', 0, self.followers_count+2000)).json()['items']
+
+        # PROOF OF CONCEPT
+        if self.username == 'thee-engineer':
+            self.matches[3] = self.apiman.get('search/users?q=silviutroscot').json()['items'][0]
+        else:
+            self.matches[3] = self.apiman.get('search/users?q=thee-engineer').json()['items'][0]
 
     def get_match(self):
         match = self.matches[self.mindex]
         self.mindex += 1
-        print 'get_match', match['login']
         return (match['login'])
 
 

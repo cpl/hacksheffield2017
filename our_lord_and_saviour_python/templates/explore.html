@@ -7,6 +7,8 @@
 
     <p>Matching user: </p>
     <h1> {{username}} </h1>
+    <p>match count</p>
+    <h1> {{match_count}} </h1>
 
     <form action="{{ url_for('dislike_love') }}" method="post">
         <input type="submit" name="submit" value="dislike"> <br>
