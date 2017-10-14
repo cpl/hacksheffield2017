@@ -15,6 +15,7 @@ class GithubUser(object):
             raise Exception()
         else:
             user = user.json()
+        self.mindex = 0
         self.username = username
         self.avatar = user['avatar_url']
         self.location = user['location'].replace(' ', '') if user['location'] is not None else 'UK'
@@ -44,6 +45,12 @@ class GithubUser(object):
         # print request
         # print request % (self.location, 0, self.repo_count+1000, 'user', 0, self.followers_count+2000)
         self.matches = self.apiman.get(request % (self.location, 0, self.repo_count+1000, 'user', 0, self.followers_count+2000)).json()['items']
+
+    def get_match(self):
+        match = self.matches[self.mindex]
+        self.mindex += 1
+        print 'get_match', match['login']
+        return (match['login'])
 
 
 class APIManager(object):
