@@ -4,6 +4,9 @@ from github_api import GithubUser
 app = Flask('git connect')
 
 MATCHED_PROFILES = {}
+ghuser = None
+
+
 @app.route('/')
 def hello():
     return render_template('index.html')
@@ -11,14 +14,15 @@ def hello():
 
 @app.route('/login', methods=['GET', 'POST'])
 def handle_data():
+    global ghuser
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        ghuser = None
         try:
             ghuser = GithubUser(username, password)
         except Exception:
             return render_template('login.html', err='FUCKING TRY AGAIN TWAT!')
+
         if MATCHED_PROFILES.get(username,None) is None:
             MATCHED_PROFILES[username] = ([],[])
         else:
@@ -38,6 +42,8 @@ def user():
 
 @app.route('/explore', methods=['GET', 'POST'])
 def dislike_love():
+    global ghuser
+    return ghuser.username
     if request.method == 'POST':
         if request.form['submit'] == 'dislike':
             return 'miel'
