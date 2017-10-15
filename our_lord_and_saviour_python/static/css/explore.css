@@ -1,0 +1,29 @@
+#pictureContainer {
+    width: 125px;
+    position: absolute;
+    top: -50px;
+    height: 125px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background: #000000; /* fallback for old browsers */
+    background: -webkit-radial-gradient(#434343,#434343, #000000); /* Chrome 10-25, Safari 5.1-6 */
+    background: radial-gradient(#434343, #434343, #000000 ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.actualPicture {
+    width: 90px;
+    height: 90px;
+    top: 13%;
+    left: 13%;
+    position: relative;
+    background-image: url("../profilePicture.png");
+    background-size: cover;
+    /*border: 1px, solid rgba(0, 0, 0, 0.2);*/
+    border-radius: 50%;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("../pbg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
