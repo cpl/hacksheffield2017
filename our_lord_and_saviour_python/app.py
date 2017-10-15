@@ -43,7 +43,14 @@ def user():
     global ghuser
     if ghuser is None:
         return render_template('app/index.html', err='Please log in')
-    return render_template('app/profile.html', match=MATCHED_PROFILES[ghuser.username][1][0], match_url='https://github.com/%s' % MATCHED_PROFILES[ghuser.username][1][0], user_name=ghuser.username, location=ghuser.location, bio=ghuser.bio, repo_count=ghuser.repo_count, lang0=ghuser.lang_name[0][0], lang1=ghuser.lang_name[1][0], lang2=ghuser.lang_name[2][0], match_count=len(MATCHED_PROFILES[ghuser.username][1]), avatar_url=ghuser.avatar)
+
+    if len(MATCHED_PROFILES[ghuser.username][1][0]) > 0:
+        match = MATCHED_PROFILES[ghuser.username][1][0]
+        match_url = 'https://github.com/%s' % MATCHED_PROFILES[ghuser.username][1][0]
+    else:
+        match = ''
+        match_url = '#'
+    return render_template('app/profile.html', match=match, match_url=match_url, user_name=ghuser.username, location=ghuser.location, bio=ghuser.bio, repo_count=ghuser.repo_count, lang0=ghuser.lang_name[0][0], lang1=ghuser.lang_name[1][0], lang2=ghuser.lang_name[2][0], match_count=len(MATCHED_PROFILES[ghuser.username][1]), avatar_url=ghuser.avatar)
 
 
 @app.route('/explore', methods=['GET', 'POST'])
