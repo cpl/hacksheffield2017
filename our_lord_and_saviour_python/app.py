@@ -30,19 +30,19 @@ def handle_data():
             ghuser.active_matches = MATCHED_PROFILES[username][1]
 
         # , username=ghuser.username, location=ghuser.location, bio=ghuser.bio, repocount=ghuser.repo_count, l1=ghuser.lang_name[0], l2=ghuser.lang_name[1], l3=ghuser.lang_name[2]
-        return render_template('app/profile.html')
+        return render_template('app/profile.html', user_name=ghuser.username, location=ghuser.location, bio=ghuser.bio, repo_count=ghuser.repo_count, lang0=ghuser.lang_name[0][0], lang1=ghuser.lang_name[1][0], lang2=ghuser.lang_name[2][0])
     elif request.method == 'GET':
         return render_template('app/index.html')
     else:
         return 'Please try again, this time using GET or POST'
 
 
-@app.route('/user')
+@app.route('/profile')
 def user():
     global ghuser
     if ghuser is None:
-        return render_template('login.html', err='PLEASE LOG IN')
-    return render_template('user.html', username=ghuser.username, location=ghuser.location, bio=ghuser.bio, repocount=ghuser.repo_count, l1=ghuser.lang_name[0], l2=ghuser.lang_name[1], l3=ghuser.lang_name[2])
+        return render_template('app/index.html')
+    return render_template('app/profile.html', user_name=ghuser.username, location=ghuser.location, bio=ghuser.bio, repo_count=ghuser.repo_count, lang0=ghuser.lang_name[0][0], lang1=ghuser.lang_name[1][0], lang2=ghuser.lang_name[2][0])
 
 
 @app.route('/explore', methods=['GET', 'POST'])
