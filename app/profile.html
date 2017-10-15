@@ -60,8 +60,8 @@
                 <div class="col-md-6 col-12">
 
 
-                    <button class="btn btn-primary col-md-6 leftUp">Industry</button>
-                    <button class="btn btn-primary col-md-6 down" data-toggle="modal" data-target="#exampleModalLong">People</button>
+                    <button class="btn btn-primary col-md-6 btn-lg leftUp" data-toggle="modal" data-target="#exampleModalLong2">Industry</button>
+                    <button class="btn btn-primary col-md-6 btn-lg down" data-toggle="modal" data-target="#exampleModalLong1">People</button>
                 </div>
             </div>
         </div>
@@ -71,26 +71,59 @@
 
 
         <!-- Button trigger modal -->
-        <!-- Modal -->
+        <!-- Modal people-->
         <div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
+                    
+                    
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <div class="col-xl-6">
+                            <h5 class="modal-title" id="exampleModalLongTitle">user_Name</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="col-xl-6 pictureContainerModal">
+                            <div class="actualPictureModal">
+
+                            </div>
+                        </div>
                     </div>
+                    
                     <div class="modal-body">
-                        ...
+                        
+                        <div class="col-md-6 col-12 ">
+                            
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+        </div>
+
+
+
+    <!-- Modal industry-->
+    <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">company_Name</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
 
 
 

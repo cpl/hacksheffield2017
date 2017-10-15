@@ -37,6 +37,7 @@ div.modal-body, .modal-header, .modal-footer{
 }
 #iconGit {
     background-image: url("../gitIcon.png");
+    background-size:cover;
     margin-top:10%;
 }
 .h8{

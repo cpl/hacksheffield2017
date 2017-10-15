@@ -32,6 +32,29 @@ h3{
     background: -webkit-radial-gradient(#434343,#434343, #000000); /* Chrome 10-25, Safari 5.1-6 */
     background: radial-gradient(#434343, #434343, #000000 ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+.pictureContainerModal {
+    width: 50px;
+    height: 50px;
+    position:relative;
+    left: 5;
+    right: -10%;
+    border-radius:50%;
+    border: 1px solid black;
+    background: #000000; /* fallback for old browsers */
+    background: -webkit-radial-gradient(#434343,#434343, #000000); /* Chrome 10-25, Safari 5.1-6 */
+    background: radial-gradient(#434343, #434343, #000000 ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.actualPictureModal {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 10px;
+    left: -6px;
+    background-image: url("../profilePicture.png");
+    background-size: cover;
+    /*border: 1px, solid rgba(0, 0, 0, 0.2);*/
+    border-radius: 50%;
+}
 @media screen and (max-width: 768px;) {
     .container{
         padding-top: 20%;
@@ -69,6 +92,13 @@ h3{
     margin-top: 2.5%;
     margin-left:15%;
     border-radius: 50%;
+}
+
+div.modal-body, .modal-header, .modal-footer {
+    color:white;
+    background-color: #141E30; /* fallback for old browsers */
+    background-color: -webkit-linear-gradient(to right, #243B55, #141E30); /* Chrome 10-25, Safari 5.1-6 */
+    background-color: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 h1{
     
