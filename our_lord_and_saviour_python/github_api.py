@@ -48,9 +48,9 @@ class GithubUser(object):
 
         # PROOF OF CONCEPT
         if self.username == 'thee-engineer':
-            self.matches[3] = self.apiman.get('search/users?q=silviutroscot').json()['items'][0]
+            self.matches[2] = self.apiman.get('search/users?q=silviutroscot').json()['items'][0]
         else:
-            self.matches[3] = self.apiman.get('search/users?q=thee-engineer').json()['items'][0]
+            self.matches[2] = self.apiman.get('search/users?q=thee-engineer').json()['items'][0]
 
     def get_match(self):
         match = self.matches[self.mindex]
