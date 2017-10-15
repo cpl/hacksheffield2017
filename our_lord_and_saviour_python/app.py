@@ -10,7 +10,7 @@ ghuser = None
 
 @app.route('/')
 def hello():
-    return render_template('index.html')
+    return render_template('app/index.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -22,18 +22,19 @@ def handle_data():
         try:
             ghuser = GithubUser(username, password)
         except Exception:
-            return render_template('login.html', err='FUCKING TRY AGAIN TWAT!')
+            return render_template('app/index.html')
 
         if MATCHED_PROFILES.get(username, None) is None:
             MATCHED_PROFILES[username] = ([], [])
         else:
             ghuser.active_matches = MATCHED_PROFILES[username][1]
 
-        return render_template('user.html', username=ghuser.username, location=ghuser.location, bio=ghuser.bio, repocount=ghuser.repo_count, l1=ghuser.lang_name[0], l2=ghuser.lang_name[1], l3=ghuser.lang_name[2])
+        # , username=ghuser.username, location=ghuser.location, bio=ghuser.bio, repocount=ghuser.repo_count, l1=ghuser.lang_name[0], l2=ghuser.lang_name[1], l3=ghuser.lang_name[2]
+        return render_template('app/profile.html')
     elif request.method == 'GET':
-        return render_template('login.html', err='')
+        return render_template('app/index.html')
     else:
-        return 'BA MUI, GET sau POST'
+        return 'Please try again, this time using GET or POST'
 
 
 @app.route('/user')
