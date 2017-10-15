@@ -56,7 +56,7 @@ class GithubUser(object):
     def get_match(self):
         match = self.matches[self.mindex]
         self.mindex += 1
-        return (match['login'])
+        return match
 
 
 class APIManager(object):

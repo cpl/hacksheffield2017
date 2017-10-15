@@ -18,7 +18,7 @@
     <link rel="stylesheet" href={{ url_for('static', filename='app.css') }}>
     <script src={{ url_for('static', filename='bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js') }}></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
-    <link href={{ url_for('static', filename='css/profile.css') }} rel="stylesheet" />
+    <link href={{ url_for('static', filename='css/explore.css') }} rel="stylesheet" />
 
 </head>
 <body>
@@ -61,24 +61,15 @@
                     <div class="col-xl-12 infoProfile">
                         <h3>{{user_name}}</h3>
                         <h4>{{location}}</h4>
-                        <h5>Bio :</h5>
-                        <h6>{{bio}}</h6>
-                        {{repo_count}}
-                        Languages used :
-                        <ul>
-                            <li>{{lang0}}</li>
-                            <li>{{lang1}}</li>
-                            <li>{{lang2}}</li>
-                        </ul>
 
                     </div>
 
                 </div>
                 <div class="col-md-6 col-12">
-
-
-                    <button class="btn btn-primary col-md-6 btn-lg leftUp" data-toggle="modal" data-target="#exampleModalLong2">Industry</button>
-                    <button class="btn btn-primary col-md-6 btn-lg down" data-toggle="modal" data-target="#exampleModalLong1">People</button>
+                    <form action="{{ url_for('dislike_love') }}" method="post">
+                        <input type="submit" name="submit" value="dislike"> <br>
+                        <input type="submit" name="submit" value="love">
+                    </form>
                 </div>
             </div>
         </div>

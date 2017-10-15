@@ -49,9 +49,9 @@ def user():
 def dislike_love():
     global ghuser
     if ghuser is None:
-        return render_template('login.html', err='PLEASE LOG IN')
+        return render_template('app/index.html')
 
-    pprint(MATCHED_PROFILES)
+    # pprint(MATCHED_PROFILES)
 
     if request.method == 'POST':
         if request.form['submit'] == 'dislike':
@@ -67,9 +67,11 @@ def dislike_love():
         else:
             return 'unvalid'
 
-        return render_template("explore.html", match_count=len(MATCHED_PROFILES[ghuser.username][1]), username=ghuser.get_match())
+        match = ghuser.get_match()
+        return render_template("app/explore.html", avatar_url=match['avatar_url'], user_name=match['login'], location=ghuser.location)
     elif request.method == 'GET':
-        return render_template("explore.html", match_count=len(MATCHED_PROFILES[ghuser.username][1]), username=ghuser.get_match())
+        match = ghuser.get_match()
+        return render_template("app/explore.html", avatar_url=match['avatar_url'], user_name=match['login'], location=ghuser.location)
     else:
         return 'BA MUI, GET sau POST'
 
