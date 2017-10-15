@@ -54,6 +54,12 @@ class GithubUser(object):
 
     def get_match(self):
         match = self.matches[self.mindex]
+        mmmatch = self.apiman.get('users/%s' % match['login']).json()
+        match['repos'] = mmmatch['public_repos']
+        match['followers'] = mmmatch['followers']
+        # match['stars'] = len(self.apiman.get('users/%s/starred' % match['login']).json())
+        # match['followers'] = len(self.apiman.get('users/%s/followers' % match['login']).json())
+        # match['repos'] = len(self.apiman.get('users/%s/repos' % match['login']).json())
         self.mindex += 1
         return match
 
