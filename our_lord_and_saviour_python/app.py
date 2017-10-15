@@ -10,7 +10,7 @@ ghuser = None
 
 @app.route('/')
 def hello():
-    return render_template('app/index.html')
+    return render_template('app/index.html', err='')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -22,7 +22,7 @@ def handle_data():
         try:
             ghuser = GithubUser(username, password)
         except Exception:
-            return render_template('app/index.html')
+            return render_template('app/index.html', err='Invalid auth')
 
         if MATCHED_PROFILES.get(username, None) is None:
             MATCHED_PROFILES[username] = ([], [])
@@ -41,7 +41,7 @@ def handle_data():
 def user():
     global ghuser
     if ghuser is None:
-        return render_template('app/index.html')
+        return render_template('app/index.html', err='Please log in')
     return render_template('app/profile.html', user_name=ghuser.username, location=ghuser.location, bio=ghuser.bio, repo_count=ghuser.repo_count, lang0=ghuser.lang_name[0][0], lang1=ghuser.lang_name[1][0], lang2=ghuser.lang_name[2][0], match_count=len(MATCHED_PROFILES[ghuser.username][1]), avatar_url=ghuser.avatar)
 
 
@@ -49,7 +49,7 @@ def user():
 def dislike_love():
     global ghuser
     if ghuser is None:
-        return render_template('app/index.html')
+        return render_template('app/index.html', err='Please log in')
 
     # pprint(MATCHED_PROFILES)
 
