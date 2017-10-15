@@ -12,6 +12,23 @@ button{
 h3{
     color:white;
 }
+a{
+    color: white;
+}
+.infoProfile {
+   position:absolute;
+   top:120px;
+}
+.notifications {
+    margin-left:200%;
+    padding-left:0%;
+    width:35px;
+    border: 1px solid red;
+    border-radius:15%;
+    text-align:right;
+    color:red;
+    background:white;
+}
 .right {
     background-color: rgba(72, 74, 76, 0.8);
     height: 500px;
@@ -19,13 +36,13 @@ h3{
 }
 .focus {
     width:100%;
+    color:white;
 }
-.pictureContainer {
+#pictureContainer {
     width: 125px;
+    position: absolute;
+    top: -50px;
     height: 125px;
-    position: relative;
-    left: 10%;
-    top: -13%;
     border-radius: 50%;
     border: 1px solid black;
     background: #000000; /* fallback for old browsers */
@@ -63,9 +80,9 @@ h3{
 .actualPicture {
     width: 90px;
     height: 90px;
+    top:13%;
+    left:13%;
     position: relative;
-    top: 17px;
-    left: 1.5px;
     background-image: url("../profilePicture.png");
     background-size:cover;
     /*border: 1px, solid rgba(0, 0, 0, 0.2);*/
