@@ -1,7 +1,6 @@
 import operator
 import requests
 
-
 API = 'https://api.github.com/%s'
 HEADER = {'Accept': 'application/vnd.github.v3+json'}
 
@@ -40,12 +39,12 @@ class GithubUser(object):
         self.lang_name = [i for i in reversed(sorted_langs) if i[0] not in ['PHP', 'JavaScript', 'CSS']]
         print self.lang_name
 
-        request = 'search/users?q=location:%s repos:%d..%d type:%s followers:%d..%d '
+        request = 'search/users?q=location:%s repos:%d..%d followers:%d..%d '
         for lang in languages.keys():
             request += 'language:%s ' % lang.replace(' ', '')
         request += '&per_page=100'
 
-        self.matches = self.apiman.get(request % (self.location, 0, self.repo_count+1000, 'user', 0, self.followers_count+2000)).json()['items']
+        self.matches = self.apiman.get(request % (self.location, 0, self.repo_count+1000, 0, self.followers_count+2000)).json()['items']
 
         # PROOF OF CONCEPT
         if self.username == 'thee-engineer':

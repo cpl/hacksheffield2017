@@ -5,6 +5,7 @@ from pprint import pprint
 app = Flask('git connect')
 
 MATCHED_PROFILES = {}
+userororg = 'user'
 ghuser = None
 
 
