@@ -30,7 +30,7 @@ def handle_data():
             ghuser.active_matches = MATCHED_PROFILES[username][1]
 
         # , username=ghuser.username, location=ghuser.location, bio=ghuser.bio, repocount=ghuser.repo_count, l1=ghuser.lang_name[0], l2=ghuser.lang_name[1], l3=ghuser.lang_name[2]
-        return render_template('app/profile.html', user_name=ghuser.username, location=ghuser.location, bio=ghuser.bio, repo_count=ghuser.repo_count, lang0=ghuser.lang_name[0][0], lang1=ghuser.lang_name[1][0], lang2=ghuser.lang_name[2][0])
+        return render_template('app/profile.html', user_name=ghuser.username, location=ghuser.location, bio=ghuser.bio, repo_count=ghuser.repo_count, lang0=ghuser.lang_name[0][0], lang1=ghuser.lang_name[1][0], lang2=ghuser.lang_name[2][0], match_count=len(ghuser.matches)-ghuser.mindex)
     elif request.method == 'GET':
         return render_template('app/index.html')
     else:
@@ -42,7 +42,7 @@ def user():
     global ghuser
     if ghuser is None:
         return render_template('app/index.html')
-    return render_template('app/profile.html', user_name=ghuser.username, location=ghuser.location, bio=ghuser.bio, repo_count=ghuser.repo_count, lang0=ghuser.lang_name[0][0], lang1=ghuser.lang_name[1][0], lang2=ghuser.lang_name[2][0])
+    return render_template('app/profile.html', user_name=ghuser.username, location=ghuser.location, bio=ghuser.bio, repo_count=ghuser.repo_count, lang0=ghuser.lang_name[0][0], lang1=ghuser.lang_name[1][0], lang2=ghuser.lang_name[2][0], match_count=len(ghuser.matches)-ghuser.mindex)
 
 
 @app.route('/explore', methods=['GET', 'POST'])
