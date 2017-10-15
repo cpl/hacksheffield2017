@@ -76,10 +76,13 @@ def dislike_love():
             return 'unvalid'
 
         match = ghuser.get_match()
-        return render_template("app/explore.html", followers=match['followers'], repos=match['repos'], avatar_url=match['avatar_url'], user_name=match['login'], location=ghuser.location)
+        murl = 'https://github.com/%s' % match['login']
+        return render_template("app/explore.html",murl=murl, followers=match['followers'], repos=match['repos'], avatar_url=match['avatar_url'], user_name=match['login'], location=ghuser.location)
     elif request.method == 'GET':
         match = ghuser.get_match()
-        return render_template("app/explore.html", followers=match['followers'], repos=match['repos'], avatar_url=match['avatar_url'], user_name=match['login'], location=ghuser.location)
+
+        murl = 'https://github.com/%s' % match['login']
+        return render_template("app/explore.html",murl=murl, followers=match['followers'], repos=match['repos'], avatar_url=match['avatar_url'], user_name=match['login'], location=ghuser.location)
     else:
         return 'BA MUI, GET sau POST'
 

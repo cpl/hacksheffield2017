@@ -30,6 +30,9 @@ div.modal-body, .modal-header, .modal-footer{
 div.modal-body, .modal-header, .modal-footer{
 
 }
+.red{
+    color:red;
+}
 .modal {
     color: white;
     margin-top: 10%;
