@@ -1,3 +1,4 @@
+import operator
 import requests
 
 
@@ -35,7 +36,9 @@ class GithubUser(object):
                 else:
                     self.languages[key] += value
 
-        self.lang_name = self.languages.keys()
+        sorted_langs = sorted(self.languages.items(), key=operator.itemgetter(1))
+        self.lang_name = [i for i in reversed(sorted_langs) if i[0] not in ['PHP', 'JavaScript', 'CSS']]
+        print self.lang_name
 
         request = 'search/users?q=location:%s repos:%d..%d type:%s followers:%d..%d '
         for lang in languages.keys():
