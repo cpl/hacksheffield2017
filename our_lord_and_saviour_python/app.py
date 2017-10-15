@@ -44,6 +44,8 @@ def user():
     if ghuser is None:
         return render_template('app/index.html', err='Please log in')
 
+    pprint(MATCHED_PROFILES)
+
     if len(MATCHED_PROFILES[ghuser.username][1]) > 0:
         match = MATCHED_PROFILES[ghuser.username][1][0]
         match_url = 'https://github.com/%s' % MATCHED_PROFILES[ghuser.username][1][0]
@@ -59,7 +61,7 @@ def dislike_love():
     if ghuser is None:
         return render_template('app/index.html', err='Please log in')
 
-    # pprint(MATCHED_PROFILES)
+    pprint(MATCHED_PROFILES)
 
     if request.method == 'POST':
         if request.form['submit'] == 'dislike':
