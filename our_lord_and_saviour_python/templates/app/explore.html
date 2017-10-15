@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
@@ -34,7 +34,7 @@
             <a class="nav-link navbar-right " href={{ url_for('static', filename='') }}><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i></a>
         </div>
     </nav>
-    <div class="background"></div>
+
 
     <div class="container title">
         <div class="row">
@@ -67,8 +67,8 @@
                 </div>
                 <div class="col-md-6 col-12">
                     <form action="{{ url_for('dislike_love') }}" method="post">
-                        <input type="submit" name="submit" value="dislike"> <br>
-                        <input type="submit" name="submit" value="love">
+                        <button class="btn btn-primary col-md-6 btn-lg leftUp" type="submit" name="submit" value="dislike" data-toggle="modal" data-target="#exampleModalLong2"><i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i></button>
+                        <button class="btn btn-primary col-md-6 btn-lg down" type="submit" name="submit" value="love" data-toggle="modal" data-target="#exampleModalLong1"><i class="fa fa-thumbs-down fa-2x" aria-hidden="true"></i></button>
                     </form>
                 </div>
             </div>
